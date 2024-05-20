@@ -14,10 +14,13 @@ app = Flask(__name__)
 app.config.from_object(config)
 
 # Import the Talisman class from flask_talisman
-from flask_talisman import Talisman  
+from flask_talisman import Talisman 
+from flask_cors import CORS
+
 
 # Create an instance of the Talisman class and pass the Flask app to it
-talisman = Talisman(app)  
+talisman = Talisman(app)
+CORS(app)
 
 # Import the routes After the Flask app is created
 # pylint: disable=wrong-import-position, cyclic-import, wrong-import-order
